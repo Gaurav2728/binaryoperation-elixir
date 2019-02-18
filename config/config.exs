@@ -11,6 +11,11 @@ config :binaryoperation,
 
 # Configures the endpoint
 config :binaryoperation, BinaryoperationWeb.Endpoint,
+  url: [host: "localhost"],
+  secret_key_base: "tvmx5NhMITUeOXGoMGJbFCHPmGGdNRI88OXY7Yovp71cbmQMNTh3A4NMN7q/8smF",
+  render_errors: [view: BinaryoperationWeb.ErrorView, accepts: ~w(html json)],
+  pubsub: [name: Binaryoperation.PubSub,
+           adapter: Phoenix.PubSub.PG2]
 
 # Configures Elixir's Logger
 config :logger, :console,
