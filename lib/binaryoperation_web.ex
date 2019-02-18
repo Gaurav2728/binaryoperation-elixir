@@ -21,7 +21,8 @@ defmodule BinaryoperationWeb do
     quote do
       use Phoenix.Controller, namespace: BinaryoperationWeb
       import Plug.Conn
-
+      import BinaryoperationWeb.Router.Helpers
+      import BinaryoperationWeb.Gettext
     end
   end
 
@@ -45,13 +46,15 @@ defmodule BinaryoperationWeb do
   def router do
     quote do
       use Phoenix.Router
-
+      import Plug.Conn
+      import Phoenix.Controller
     end
   end
 
   def channel do
     quote do
-
+      use Phoenix.Channel
+      import BinaryoperationWeb.Gettext
     end
   end
 
